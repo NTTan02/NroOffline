@@ -4,7 +4,6 @@ using TMPro;
 
 public class ShopUI : MonoBehaviour
 {
-    // Static Instance — ShopNPC tìm qua đây
     public static ShopUI Instance;
 
     [Header("UI")]
@@ -24,11 +23,8 @@ public class ShopUI : MonoBehaviour
         shopPanel?.SetActive(true);
         Time.timeScale = 0f;
 
-        // Xóa slot cũ
         foreach (Transform child in itemContainer)
             Destroy(child.gameObject);
-
-        // Tạo slot mới
         foreach (var item in items)
         {
             var slot = Instantiate(itemSlotPrefab, itemContainer);
