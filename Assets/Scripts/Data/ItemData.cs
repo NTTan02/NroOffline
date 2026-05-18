@@ -2,12 +2,12 @@ using UnityEngine;
 
 public enum EquipmentType
 {
-    Ao,      // Áo
-    Quan,    // Quần
-    Gang,    // Găng
-    Giay,    // Giày
-    Rada,    // Rada
-    Giap     // Giáp luyện tập
+    Ao,     
+    Quan,   
+    Gang,    
+    Giay,    
+    Rada,   
+    Giap    
 }
 public enum ItemType { HPPotion, MPPotion, AtkBuff, DefBuff, Equipment }
 
@@ -25,9 +25,8 @@ public class ItemData : ScriptableObject
     public int value;
 
     [Header("Equipment")]
-    public EquipmentType equipmentType;  // Loại trang bị
-    public Sprite characterOverlay;      // Sprite hiện lên người khi mặc (optional)
-
+    public EquipmentType equipmentType;  
+    public Sprite characterOverlay;      
     [Header("Equipment Stats")]
     public int bonusHP;
     public int bonusMP;
