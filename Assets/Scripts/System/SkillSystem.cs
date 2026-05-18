@@ -38,12 +38,10 @@ public class SkillSystem : MonoBehaviour
     {
         if (!stats.IsAlive) return;
 
-        // Giảm cooldown
         for (int i = 0; i < cooldownTimers.Length; i++)
             if (cooldownTimers[i] > 0)
                 cooldownTimers[i] -= Time.deltaTime;
 
-        // Timeout pendingSkill — phòng trường hợp Animation Event không gọi được
         if (pendingSkill != null)
         {
             pendingSkillTimeout -= Time.deltaTime;
@@ -60,7 +58,6 @@ public class SkillSystem : MonoBehaviour
             hud.UpdateSkillCooldowns(cooldownTimers, stats.skills);
     }
 
-    // Load icon lên skill slot UI
     void InitSkillSlotUI()
     {
         if (stats?.skills == null) return;
@@ -102,7 +99,6 @@ public class SkillSystem : MonoBehaviour
         var skill = stats.skills[index];
         if (skill == null) return;
 
-        // Đang có skill pending chưa xử lý
         if (pendingSkill != null) return;
 
         if (cooldownTimers[index] > 0)
@@ -121,7 +117,7 @@ public class SkillSystem : MonoBehaviour
 
         cooldownTimers[index] = skill.cooldown;
         pendingSkill = skill;
-        pendingSkillTimeout = 1.0f; // Timeout 1 giây
+        pendingSkillTimeout = 1.0f;
 
         if (combat == null || combat.currentTarget == null || combat.currentTarget.IsDead)
         {
@@ -132,7 +128,6 @@ public class SkillSystem : MonoBehaviour
         fireDirection = GetTargetDirection(combat.currentTarget.transform);
         FaceDirection(fireDirection);
 
-        // Trigger animation
         anim?.SetInteger("skillIndex", index + 1);
         anim?.SetTrigger("skill");
         hud?.UpdateHUD();
@@ -156,7 +151,6 @@ public class SkillSystem : MonoBehaviour
         }
     }
 
-    // Gọi bởi Animation Event
     public void OnFireProjectile()
     {
         if (pendingSkill == null) return;
@@ -166,7 +160,6 @@ public class SkillSystem : MonoBehaviour
         pendingSkillTimeout = 0f;
 
         ExecuteSkill(skill);
-        // AudioManager.Instance?.PlaySkill(); // ← bật lại
     }
 
     void ExecuteSkill(SkillData skill)
