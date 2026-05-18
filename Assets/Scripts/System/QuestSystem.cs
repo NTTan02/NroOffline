@@ -8,11 +8,8 @@ public class QuestSystem : MonoBehaviour
     [Header("Tất cả quest trong game")]
     public QuestData[] allQuests;
 
-    // Quest đang làm
     public List<QuestData> activeQuests = new List<QuestData>();
-    // Tiến độ quest (questName → số lượng hiện tại)
     public Dictionary<string, int> progress = new Dictionary<string, int>();
-    // Quest đã hoàn thành
     public List<string> completedQuests = new List<string>();
 
     void Awake()
@@ -20,7 +17,7 @@ public class QuestSystem : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ← thêm dòng này
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
@@ -29,7 +26,6 @@ public class QuestSystem : MonoBehaviour
         }
     }
 
-    // Nhận quest
     public bool AcceptQuest(QuestData quest)
     {
         if (activeQuests.Contains(quest)) return false;
@@ -41,7 +37,6 @@ public class QuestSystem : MonoBehaviour
         return true;
     }
 
-    // Cập nhật tiến độ khi giết enemy
     public void OnEnemyKilled(string enemyName)
     {
         foreach (var quest in activeQuests)
@@ -56,7 +51,6 @@ public class QuestSystem : MonoBehaviour
         }
     }
 
-    // Cập nhật tiến độ khi nhặt item
     public void OnItemCollected(string itemName)
     {
         foreach (var quest in activeQuests)
@@ -71,16 +65,13 @@ public class QuestSystem : MonoBehaviour
         }
     }
 
-    // Kiểm tra hoàn thành
     void CheckComplete(QuestData quest)
     {
         if (progress[quest.questName] < quest.targetAmount) return;
 
-        // Hoàn thành quest
         activeQuests.Remove(quest);
         completedQuests.Add(quest.questName);
 
-        // Nhận thưởng
         GameManager.Instance.AddEXP(quest.rewardEXP);
         GameManager.Instance.playerGold += quest.rewardGold;
         if (quest.rewardItem != null)
