@@ -6,7 +6,7 @@ public class ShopNPC : MonoBehaviour
     public ItemData[] shopItems;
 
     [Header("UI")]
-    public GameObject interactCanvas; // Kéo InteractCanvas trên đầu NPC
+    public GameObject interactCanvas; 
 
     private bool playerNearby = false;
 
