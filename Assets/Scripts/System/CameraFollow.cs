@@ -9,7 +9,6 @@ public class CameraFollow : MonoBehaviour
     [Header("Map Bounds")]
     public bool useBounds = true;
 
-    // Đây là mép thật của map
     public float mapMinX;
     public float mapMaxX;
     public float mapMinY;
