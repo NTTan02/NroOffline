@@ -11,8 +11,8 @@ public class QuestData : ScriptableObject
 
     [Header("Mục tiêu")]
     public QuestType questType;
-    public string targetName;   // Tên enemy cần giết / item cần thu thập
-    public int targetAmount;    // Số lượng cần
+    public string targetName;  
+    public int targetAmount; 
 
     [Header("Phần thưởng")]
     public int rewardEXP;
