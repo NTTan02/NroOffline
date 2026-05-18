@@ -29,7 +29,6 @@ public class PlayerDieUI : MonoBehaviour
         goldCostText.text = $"Hồi sinh tốn {cost} Vàng\n" +
                             $"(Vàng hiện có: {GameManager.Instance.playerGold} G)";
 
-        // Không đủ vàng → disable nút hồi sinh
         btnRevive.interactable = GameManager.Instance.playerGold >= cost;
         if (!btnRevive.interactable)
             goldCostText.text += "\n<color=#FF4444>Không đủ vàng!</color>";
@@ -46,7 +45,6 @@ public class PlayerDieUI : MonoBehaviour
         int cost = GetReviveCost();
         GameManager.Instance.playerGold -= cost;
 
-        // Hồi sinh với HP/MP
         var stats = FindObjectOfType<PlayerStats>();
         if (stats != null)
         {
