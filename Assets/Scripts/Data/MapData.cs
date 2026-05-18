@@ -5,6 +5,6 @@ public class MapData : ScriptableObject
 {
     public string mapName;
     public GameObject mapPrefab;
-    public int recommendedLevel; // Level đề xuất để vào map này
+    public int recommendedLevel; 
     public AudioClip bgMusic;
 }
