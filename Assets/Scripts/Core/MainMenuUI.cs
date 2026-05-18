@@ -24,7 +24,6 @@ public class MainMenuUI : MonoBehaviour
         btnContinue.onClick.AddListener(OnContinue);
         btnQuit.onClick.AddListener(OnQuit);
 
-        // Chỉ bật Continue nếu có save
         btnContinue.interactable = SaveSystem.HasSave();
         loadingPanel.SetActive(false);
     }
@@ -37,18 +36,15 @@ public class MainMenuUI : MonoBehaviour
 
     void OnContinue()
     {
-        // Load data vào GameManager trước
         bool success = SaveSystem.Load(allRaces);
 
         if (!success)
         {
             Debug.LogError("Load thất bại!");
-            // Fallback về CharacterCreate
             StartCoroutine(LoadScene("CharacterCreate"));
             return;
         }
 
-        // Load thẳng vào World_Map
         StartCoroutine(LoadScene("World_Map"));
     }
 
