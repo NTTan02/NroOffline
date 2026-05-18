@@ -18,7 +18,7 @@ public class QuestUI : MonoBehaviour
     public Color inactiveTabColor = new Color(0.2f, 0.2f, 0.4f);
 
     private bool isOpen = false;
-    private bool showActive = true; // true = Đang làm, false = Hoàn thành
+    private bool showActive = true; 
 
     void Start()
     {
@@ -75,7 +75,6 @@ public class QuestUI : MonoBehaviour
 
     public void Refresh()
     {
-        // Kiểm tra null an toàn
         if (QuestSystem.Instance == null)
         {
             Debug.LogWarning("QuestSystem chưa sẵn sàng!");
@@ -141,7 +140,6 @@ public class QuestUI : MonoBehaviour
             }
         }
 
-        // Progress bar
         if (slider != null)
         {
             slider.maxValue = quest.targetAmount;
@@ -151,7 +149,6 @@ public class QuestUI : MonoBehaviour
 
     void SpawnCompletedSlot(string questName)
     {
-        // Tìm QuestData theo tên
         var qs = QuestSystem.Instance;
         foreach (var q in qs.allQuests)
         {
