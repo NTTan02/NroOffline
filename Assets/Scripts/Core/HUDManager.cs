@@ -34,17 +34,17 @@ public class HUDManager : MonoBehaviour
     public TMP_Text goldText;
 
     [Header("Skill Slots (5 slot)")]
-    public Image[] skillIcons;         // Icon của từng skill
-    public TMP_Text[] skillKeyTexts;   // Hiện phím 1-5
-    public Image[] cooldownOverlays;   // Overlay tối khi hồi chiêu
-    public TMP_Text[] cooldownTexts;   // Số giây còn lại
+    public Image[] skillIcons;         
+    public TMP_Text[] skillKeyTexts;   
+    public Image[] cooldownOverlays;   
+    public TMP_Text[] cooldownTexts;   
 
     [Header("Level Up")]
-    public GameObject levelUpPanel;    // Panel "LEVEL UP!"
+    public GameObject levelUpPanel;    
     public TMP_Text levelUpText;
 
     [Header("Gold Popup")]
-    public TMP_Text goldPopupText;     // Hiện "+8 Gold" khi nhận
+    public TMP_Text goldPopupText;     
 
     private PlayerStats playerStats;
 
@@ -60,7 +60,7 @@ public class HUDManager : MonoBehaviour
         levelUpPanel?.SetActive(false);
         goldPopupText?.gameObject.SetActive(false);
 
-        InitSkillSlots(); // thêm dòng này
+        InitSkillSlots();
 
         UpdateHUD();
         UpdatePlayerInfo();
@@ -77,7 +77,7 @@ public class HUDManager : MonoBehaviour
 
         for (int i = 0; i < skillIcons.Length; i++)
         {
-            // Hiện icon skill nếu có
+    
             if (i < playerStats.skills.Count && playerStats.skills[i] != null)
             {
                 var skill = playerStats.skills[i];
@@ -86,15 +86,15 @@ public class HUDManager : MonoBehaviour
             }
             else
             {
-                // Slot trống
+                
                 skillIcons[i].color = new Color(1, 1, 1, 0.2f);
             }
 
-            // Hiện phím tắt
+            
             if (skillKeyTexts != null && i < skillKeyTexts.Length)
                 skillKeyTexts[i].text = keyLabels[i];
 
-            // Reset cooldown overlay
+            
             if (cooldownOverlays != null && i < cooldownOverlays.Length)
                 cooldownOverlays[i].fillAmount = 0f;
 
@@ -102,7 +102,7 @@ public class HUDManager : MonoBehaviour
                 cooldownTexts[i].text = "";
         }
     }
-    // Gọi từ SkillSystem khi init
+    
     public void InitSkillSlots(List<SkillData> skills)
     {
         if (skills == null) return;
@@ -134,7 +134,7 @@ public class HUDManager : MonoBehaviour
         }
     }
 
-    // ===== CẬP NHẬT HUD CHÍNH =====
+    
 
     public void UpdateHUD()
     {
@@ -164,7 +164,7 @@ public class HUDManager : MonoBehaviour
         goldText.text = $"{gm.playerGold} G";
     }
 
-    // ===== CẬP NHẬT THÔNG TIN NHÂN VẬT =====
+
 
     void UpdatePlayerInfo()
     {
@@ -177,7 +177,7 @@ public class HUDManager : MonoBehaviour
             playerAvatar.sprite = gm.selectedRace.characterSprite;
     }
 
-    // ===== CẬP NHẬT COOLDOWN SKILL =====
+  
 
     public void UpdateSkillCooldowns(float[] timers, List<SkillData> skills)
     {
@@ -186,13 +186,13 @@ public class HUDManager : MonoBehaviour
             float maxCD = i < skills.Count ? skills[i].cooldown : 1f;
             float remaining = timers[i];
 
-            // Overlay tối theo tỉ lệ cooldown còn lại
+            
             if (cooldownOverlays[i] != null)
                 cooldownOverlays[i].fillAmount = remaining > 0
                     ? remaining / maxCD
                     : 0f;
 
-            // Text đếm ngược
+            
             if (cooldownTexts[i] != null)
                 cooldownTexts[i].text = remaining > 0
                     ? Mathf.CeilToInt(remaining).ToString()
@@ -200,7 +200,7 @@ public class HUDManager : MonoBehaviour
         }
     }
 
-    // ===== LEVEL UP =====
+    
 
     public void ShowLevelUp()
     {
@@ -216,7 +216,7 @@ public class HUDManager : MonoBehaviour
         levelUpPanel.SetActive(false);
     }
 
-    // ===== GOLD POPUP =====
+    
 
     public void ShowGoldPopup(int amount)
     {
