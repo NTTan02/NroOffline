@@ -37,7 +37,6 @@ public static class SaveSystem
         Debug.Log("Game saved!");
     }
 
-    // Trả về true nếu load thành công
     public static bool Load(CharacterData[] allRaces)
     {
         if (!HasSave()) return false;
@@ -48,7 +47,6 @@ public static class SaveSystem
         var gm = GameManager.Instance;
         if (gm == null) return false;
 
-        // Tìm lại race theo tên
         CharacterData foundRace = null;
         foreach (var race in allRaces)
         {
@@ -65,7 +63,6 @@ public static class SaveSystem
             return false;
         }
 
-        // Gán data vào GameManager
         gm.selectedRace      = foundRace;
         gm.playerName        = data.playerName;
         gm.playerLevel       = data.level;
