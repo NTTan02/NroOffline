@@ -30,7 +30,6 @@ public class PlayerStats : MonoBehaviour
             return;
         }
 
-        // Gán stats
         maxHP = gm.GetMaxHP();
         currentHP = gm.currentHP;
         maxMP = gm.GetMaxMP();
@@ -41,12 +40,10 @@ public class PlayerStats : MonoBehaviour
         atkSpeed = race.baseATKSpeed;
         skills = new List<SkillData>(race.defaultSkills);
 
-        // Gán Sprite theo tộc
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null && race.characterSprite != null)
             sr.sprite = race.characterSprite;
 
-        // Gán Animator Controller theo tộc
         var anim = GetComponent<Animator>();
         if (anim != null && race.animatorController != null)
             anim.runtimeAnimatorController = race.animatorController;
@@ -74,9 +71,7 @@ public class PlayerStats : MonoBehaviour
         GameManager.Instance.currentHP = currentHP;
 
         GetComponent<Animator>()?.SetTrigger("hit");
-        // AudioManager.Instance?.PlayHurt();
 
-        // Kiểm tra chết
         if (currentHP <= 0)
             OnDie();
 
@@ -88,7 +83,6 @@ public class PlayerStats : MonoBehaviour
         GetComponent<Animator>()?.SetTrigger("die");
         GetComponent<PlayerController>()?.SetCanMove(false);
 
-        // Hiện Die Panel sau 1 giây
         StartCoroutine(ShowDiePanelDelay());
     }
 
