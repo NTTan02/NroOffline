@@ -24,9 +24,8 @@ public class SkillData : ScriptableObject
     public float buffDuration = 0f;
     public float projectileSpeed = 10f;
     public float aoeRadius = 3f;
-    public bool piercing = false;       // ← thêm: xuyên qua nhiều enemy
-
+    public bool piercing = false;       
     [Header("Prefab")]
     public GameObject projectilePrefab;
-    public GameObject effectPrefab;     // effect khi trúng / AoE
+    public GameObject effectPrefab;     
 }
