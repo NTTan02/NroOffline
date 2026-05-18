@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             playerEXP -= GetEXPRequired();
             playerLevel++;
-            currentHP = GetMaxHP(); // Hồi full khi lên level
+            currentHP = GetMaxHP();
             currentMP = GetMaxMP();
             return true;
         }
