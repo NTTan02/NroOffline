@@ -39,16 +39,13 @@ public class MapManager : MonoBehaviour
             yield break;
         }
 
-        // Destroy map & player cũ
         if (currentMapInstance != null) Destroy(currentMapInstance);
         if (currentPlayer != null)      Destroy(currentPlayer);
 
         yield return null;
 
-        // Instantiate map mới
         currentMapInstance = Instantiate(maps[index].mapPrefab);
 
-        // Tìm đúng SpawnPoint theo side
         SpawnSide side = GameManager.Instance.targetSpawnSide;
         string spawnName = side == SpawnSide.Left
             ? "SpawnPoint_Left"
@@ -56,7 +53,6 @@ public class MapManager : MonoBehaviour
 
         Transform spawnPoint = currentMapInstance.transform.Find(spawnName);
 
-        // Fallback nếu không tìm thấy
         if (spawnPoint == null)
         {
             Debug.LogWarning($"Không tìm thấy {spawnName}, dùng vị trí mặc định!");
@@ -65,17 +61,11 @@ public class MapManager : MonoBehaviour
 
         Vector3 spawnPos = spawnPoint != null ? spawnPoint.position : Vector3.zero;
 
-        // Spawn player
         currentPlayer = Instantiate(playerPrefab, spawnPos, Quaternion.identity);
 
-        // Camera follow
         cameraFollow.target = currentPlayer.transform;
 
-        // // Nhạc
-        // if (maps[index].bgMusic != null)
-        //     AudioManager.Instance?.PlayMapMusic(index);
 
-        // HUD
         FindObjectOfType<HUDManager>()?.UpdateHUD();
 
         Debug.Log($"Loaded: {maps[index].mapName} | Spawn: {spawnName}");
