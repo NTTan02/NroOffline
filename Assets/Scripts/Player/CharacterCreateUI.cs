@@ -44,10 +44,7 @@ public class CharacterCreateUI : MonoBehaviour
         foreach (var btn in raceButtons)
             btn.GetComponent<Image>().color = new Color(0.9f, 0.6f, 0.2f);
 
-        // Highlight nút được chọn
         raceButtons[idx].GetComponent<Image>().color = new Color(0.3f, 0.8f, 0.3f);
-
-        // Cập nhật info
         raceNameText.text = selectedRace.raceName;
         statsText.text =
             $"HP: {selectedRace.baseHP}   MP: {selectedRace.baseMP}\n" +
@@ -70,7 +67,6 @@ public class CharacterCreateUI : MonoBehaviour
 
     void Update()
     {
-        // Bật nút Tạo mới khi đủ điều kiện
         btnCreate.interactable = nameInput.text.Trim().Length >= 2 && selectedRace != null;
     }
 }
