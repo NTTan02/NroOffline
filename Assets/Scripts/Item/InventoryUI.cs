@@ -41,7 +41,6 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
             ToggleInventory();
 
-        // Bấm ESC đóng popup
         if (Input.GetKeyDown(KeyCode.Escape))
             HideItemInfo();
     }
@@ -61,7 +60,6 @@ public class InventoryUI : MonoBehaviour
 
     public void RefreshInventory()
     {
-        // Xóa slot cũ
         foreach (Transform child in itemGrid)
             Destroy(child.gameObject);
 
@@ -81,22 +79,18 @@ public class InventoryUI : MonoBehaviour
         selectedIndex = index;
         itemInfoPopup?.SetActive(true);
 
-        // Gán icon
         if (popupIcon != null)
         {
             popupIcon.sprite = item.icon;
             popupIcon.color = item.icon != null ? Color.white : Color.clear;
         }
 
-        // Gán tên
         if (popupName != null)
             popupName.text = item.itemName;
 
-        // Gán mô tả
         if (popupDesc != null)
             popupDesc.text = item.description;
 
-        // Gán stats
         if (popupStats != null)
         {
             switch (item.itemType)
@@ -123,21 +117,17 @@ public class InventoryUI : MonoBehaviour
             }
         }
 
-        // ===== Xử lý nút theo loại item =====
         bool isEquipment = item.itemType == ItemType.Equipment;
 
-        // Nút Sử dụng — chỉ hiện với Potion/Buff
         if (btnUse != null)
         {
             btnUse.gameObject.SetActive(!isEquipment);
         }
 
-        // Nút Trang bị — chỉ hiện với Equipment
         if (btnEquip != null)
         {
             btnEquip.gameObject.SetActive(isEquipment);
 
-            // Kiểm tra slot đã có đồ chưa
             if (isEquipment && EquipmentSystem.Instance != null)
             {
                 var currentEquipped = EquipmentSystem.Instance.equipped[item.equipmentType];
