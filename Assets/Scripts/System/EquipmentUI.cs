@@ -23,7 +23,6 @@ public class EquipmentUI : MonoBehaviour
 
     void Update()
     {
-        // Bấm C để mở equipment
         if (Input.GetKeyDown(KeyCode.C))
             TogglePanel();
     }
@@ -43,7 +42,6 @@ public class EquipmentUI : MonoBehaviour
         var eq = EquipmentSystem.Instance;
         if (eq == null) return;
 
-        // Cập nhật từng slot
         slotAo?.Setup(eq.equipped[EquipmentType.Ao],    EquipmentType.Ao);
         slotQuan?.Setup(eq.equipped[EquipmentType.Quan], EquipmentType.Quan);
         slotGang?.Setup(eq.equipped[EquipmentType.Gang], EquipmentType.Gang);
@@ -54,7 +52,6 @@ public class EquipmentUI : MonoBehaviour
         if (gm.selectedRace?.characterSprite != null)
             characterPreview.sprite = gm.selectedRace.characterSprite;
 
-        // Hiện tổng stats
         var stats = FindObjectOfType<PlayerStats>();
         if (stats != null && statsText != null)
         {
