@@ -19,14 +19,12 @@ public class EquipmentSlotUI : MonoBehaviour, IPointerClickHandler
 
         if (item != null)
         {
-            // Có đồ → hiện icon
             icon.sprite  = item.icon;
             icon.color   = Color.white;
             emptyOverlay?.gameObject.SetActive(false);
         }
         else
         {
-            // Slot trống
             icon.color = new Color(1,1,1,0.1f);
             emptyOverlay?.gameObject.SetActive(true);
         }
@@ -36,7 +34,6 @@ public class EquipmentSlotUI : MonoBehaviour, IPointerClickHandler
     {
         if (currentItem != null)
         {
-            // Click vào slot có đồ → tháo ra
             EquipmentSystem.Instance?.Unequip(slotType);
         }
     }
