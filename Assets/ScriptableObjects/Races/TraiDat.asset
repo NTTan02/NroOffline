@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61304f05d45c65b438fef03f5799a509, type: 3}
+  m_Name: TraiDat
+  m_EditorClassIdentifier: 
+  raceName: Son Goku
+  animatorController: {fileID: 9100000, guid: 09a5ca04d17521046a5a100d2c09312d, type: 2}
+  characterSprite: {fileID: 21300000, guid: 7aa69dd7d3b0bdb4d9d511b25e2a370b, type: 3}
+  baseHP: 1000
+  baseMP: 1000
+  baseATK: 500
+  baseDEF: 100
+  baseSPD: 5
+  baseATKSpeed: 1
+  hpPerLevel: 15
+  mpPerLevel: 10
+  atkPerLevel: 2
+  defPerLevel: 1
+  defaultSkills:
+  - {fileID: 11400000, guid: 40a5484ff6398c742b10f9586f9519a0, type: 2}
+  - {fileID: 11400000, guid: d09d9c5ece2137b4db1385f320bdc10d, type: 2}
+  description: "Chi\u1EBFn binh m\u1EA1nh nh\u1EA5t v\u0169 tr\u1EE5."
+  passiveDescription: 

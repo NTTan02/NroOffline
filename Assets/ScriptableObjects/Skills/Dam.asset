@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8347ab30f68249c4aa3cc9d66d48180d, type: 3}
+  m_Name: Dam
+  m_EditorClassIdentifier: 
+  skillName: "\u0110\u1EA5m"
+  skillIcon: {fileID: 21300000, guid: 4ec52e668d0421847b4f7999612a1f08, type: 3}
+  description: "\u0110\xF2n \u0111\xE1nh tay g\xE2y s\xE1t th\u01B0\u01A1ng v\u1EADt
+    l\xFD"
+  skillType: 0
+  target: 0
+  mpCost: 10
+  cooldown: 0.5
+  damageMultiplier: 1.5
+  healAmount: 0
+  buffAmount: 0
+  buffDuration: 0
+  projectileSpeed: 10
+  aoeRadius: 3
+  piercing: 0
+  projectilePrefab: {fileID: 396765067176138643, guid: cca07913a7f32f74281c87bcb7a609a7, type: 3}
+  effectPrefab: {fileID: 8756100727146124197, guid: f891cf0c67a8c7841956af7a5aa9dd03, type: 3}

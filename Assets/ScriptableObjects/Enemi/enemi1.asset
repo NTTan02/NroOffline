@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01bf9e5b5ffa634c868b91e82272789, type: 3}
+  m_Name: enemi1
+  m_EditorClassIdentifier: 
+  enemyName: "Ma Ch\u01A1i"
+  sprite: {fileID: 21300000, guid: 7a1ec8378091d1643957646c92b87f28, type: 3}
+  animatorController: {fileID: 9100000, guid: c63cdf0759dd1134b8b733c08757bdb7, type: 2}
+  hp: 1000
+  atk: 100
+  def: 4
+  moveSpeed: 2
+  attackSpeed: 1
+  attackRange: 1.2
+  aggroRange: 1
+  expReward: 30
+  goldReward: 100
+  skills:
+  - {fileID: 11400000, guid: 2361c6dda277dbb49b0158d768a25273, type: 2}
+  isBoss: 0

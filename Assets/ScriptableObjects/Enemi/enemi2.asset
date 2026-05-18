@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01bf9e5b5ffa634c868b91e82272789, type: 3}
+  m_Name: enemi2
+  m_EditorClassIdentifier: 
+  enemyName: "Sa T\u0103ng"
+  sprite: {fileID: 21300000, guid: fb2bd6f65ffbca84180d23db7bac4850, type: 3}
+  animatorController: {fileID: 9100000, guid: 001cafe0db8e0304ea31ccccf5cf9ae9, type: 2}
+  hp: 5000
+  atk: 1000
+  def: 4
+  moveSpeed: 2
+  attackSpeed: 1
+  attackRange: 1.2
+  aggroRange: 1
+  expReward: 100
+  goldReward: 500
+  skills:
+  - {fileID: 11400000, guid: 40a5484ff6398c742b10f9586f9519a0, type: 2}
+  isBoss: 0

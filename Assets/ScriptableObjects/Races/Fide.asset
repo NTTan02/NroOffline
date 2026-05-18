@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61304f05d45c65b438fef03f5799a509, type: 3}
+  m_Name: Fide
+  m_EditorClassIdentifier: 
+  raceName: "\u0110\u1EA1i V\u01B0\u01A1ng Fide"
+  animatorController: {fileID: 9100000, guid: c337d405586652c4c9e3e353b2a679ba, type: 2}
+  characterSprite: {fileID: 21300000, guid: 7d007db61fadb5546930793767249e91, type: 3}
+  baseHP: 100
+  baseMP: 80
+  baseATK: 18
+  baseDEF: 12
+  baseSPD: 5
+  baseATKSpeed: 1
+  hpPerLevel: 15
+  mpPerLevel: 10
+  atkPerLevel: 2
+  defPerLevel: 1
+  defaultSkills:
+  - {fileID: 11400000, guid: 40a5484ff6398c742b10f9586f9519a0, type: 2}
+  - {fileID: 11400000, guid: 2361c6dda277dbb49b0158d768a25273, type: 2}
+  description: "Chi\u1EBFn binh b\xF3ng t\u1ED1i."
+  passiveDescription: 

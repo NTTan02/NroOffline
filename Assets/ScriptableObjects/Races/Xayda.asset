@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61304f05d45c65b438fef03f5799a509, type: 3}
+  m_Name: Xayda
+  m_EditorClassIdentifier: 
+  raceName: Vegeta
+  animatorController: {fileID: 9100000, guid: 047cef70966161340b4710a8962a349c, type: 2}
+  characterSprite: {fileID: 21300000, guid: 0ef51c985618a8c48a73d8b40fcdb2e8, type: 3}
+  baseHP: 100
+  baseMP: 80
+  baseATK: 18
+  baseDEF: 12
+  baseSPD: 5
+  baseATKSpeed: 1
+  hpPerLevel: 15
+  mpPerLevel: 10
+  atkPerLevel: 2
+  defPerLevel: 1
+  defaultSkills: []
+  description: "Ho\xE0ng t\u1EED ki\xEAu h\xE3nh Saiyan."
+  passiveDescription: 

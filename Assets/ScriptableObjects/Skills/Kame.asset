@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8347ab30f68249c4aa3cc9d66d48180d, type: 3}
+  m_Name: Kame
+  m_EditorClassIdentifier: 
+  skillName: Kamejoko
+  skillIcon: {fileID: 21300000, guid: a7a76ea1c4fcca24481e24dc77842dac, type: 3}
+  description: 
+  skillType: 0
+  target: 0
+  mpCost: 10
+  cooldown: 3
+  damageMultiplier: 1
+  healAmount: 0
+  buffAmount: 0
+  buffDuration: 0
+  projectileSpeed: 30
+  aoeRadius: 3
+  piercing: 0
+  projectilePrefab: {fileID: 1331758231997838324, guid: 776c2b9c89d987641a1ae44850f3dae8, type: 3}
+  effectPrefab: {fileID: 7081911517190054274, guid: f13e3da802aeb5b48a55172152255822, type: 3}

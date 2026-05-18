@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcff2f3b3ddb194eb012e9bd0d73601, type: 3}
+  m_Name: HPPotion_Small
+  m_EditorClassIdentifier: 
+  itemName: "D\u1EEBa Non"
+  icon: {fileID: 21300000, guid: c7d1c983faccd5b47a396f7a03be5c80, type: 3}
+  itemType: 0
+  value: 50000
+  price: 10000
+  description: "D\xF9ng \u0111\u1EC3 h\u1ED3i HP"
