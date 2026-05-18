@@ -21,7 +21,6 @@ public class MapPortal : MonoBehaviour
     {
         isTransitioning = true;
 
-        // Lưu HP/MP
         var stats = player.GetComponent<PlayerStats>();
         if (stats != null)
         {
@@ -29,11 +28,9 @@ public class MapPortal : MonoBehaviour
             GameManager.Instance.currentMP = stats.currentMP;
         }
 
-        // Lưu map index + spawn side
         GameManager.Instance.currentMapIndex  = targetMapIndex;
         GameManager.Instance.targetSpawnSide  = spawnSide;
 
-        // AudioManager.Instance?.PlayPortal();
         SaveSystem.Save();
 
         player.GetComponent<PlayerController>()?.SetCanMove(false);
